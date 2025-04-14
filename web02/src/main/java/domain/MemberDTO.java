@@ -3,14 +3,14 @@ package domain;
 //** ~DTO 정의
 //=> 멤버 변수: private, Table의 필드명과 동일하게...
 //=> 외부 접근: getter/setter
-//=> 자료 확인 편리성: toString 메서드 
+//=> 자료 확인 편리성: toString 메서드
 //=> 자료초기화 편리성: 기본생성자, 모듬컬럼 초기화 생성자
 public class MemberDTO {
 	//** 맴버 변수
 	private String id, password, name, info, birthday, rid;
 	private int age, jno;
 	private double point;
-	
+
 	//** 생성자
 	public MemberDTO() {super();}
 	public MemberDTO(String id, String password, String name, String info, String birthday, String rid, int age,
@@ -88,8 +88,8 @@ public class MemberDTO {
 		return "MemberDTO [id=" + id + ", password=" + password + ", name=" + name + ", info=" + info + ", birthday="
 				+ birthday + ", rid=" + rid + ", age=" + age + ", jno=" + jno + ", point=" + point + "]";
 	}
-	
-	
-	
-	
+
+
+
+
 }

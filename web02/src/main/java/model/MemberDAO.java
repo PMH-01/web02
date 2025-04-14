@@ -1,7 +1,10 @@
 package model;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import domain.MemberDTO;
 
@@ -16,7 +19,7 @@ public class MemberDAO {
 	private static PreparedStatement pst;
 	private static ResultSet rs;
 	private String sql;
-	
+
 	//** selectList
 	public List<MemberDTO> selectList() {
 		sql = "select * from member";
@@ -26,7 +29,7 @@ public class MemberDAO {
 	        rs = pst.executeQuery();
 			if(rs.next()) {
 				do {
-					MemberDTO sdto = new MemberDTO();					
+					MemberDTO sdto = new MemberDTO();
 					sdto.setId(rs.getString(1));
 					sdto.setPassword(rs.getString(2));
 					sdto.setName(rs.getString(3));
@@ -49,10 +52,10 @@ public class MemberDAO {
 		}
 		return null;
 	}
-	
+
 	//** selectOne
 	public MemberDTO selectOne(String id) {
-		sql="select * from student where sno=?";
+		sql="select * from member where id=?";
 		MemberDTO mdto = new MemberDTO();
 		try {
 			pst=cn.prepareStatement(sql);
@@ -77,7 +80,7 @@ public class MemberDAO {
 		}
 		return mdto;
 	}
-	
+
 	//** insert
 	public int insert(MemberDTO mdto) {
 		sql="insert into member values(?,?,?,?,?,?,?,?,?)";
@@ -98,7 +101,7 @@ public class MemberDAO {
 			return 0;
 		}
 	}
-	
+
 	//** update
 	//=> SQL에서는 P.Key 수정 가능하지만, id는 수정하지않음
 	//=> password는 별도로 단독 수정
@@ -115,29 +118,29 @@ public class MemberDAO {
 			pst.setString(6, mdto.getBirthday());
 			pst.setString(7, mdto.getRid());
 			pst.setString(8, mdto.getId());
-			
+
 			return pst.executeUpdate();
 		}catch (Exception e) {
 			System.out.println("Member update Exception => "+ e.toString());
 			return 0;
 		}
 	}
-	
+
 	//** delete
 	public int delete(String id) {
 		sql="delete from member where id=?";
 		try {
 			pst=cn.prepareStatement(sql);
 			pst.setString(1, id);
-			
+
 			return pst.executeUpdate();
 		}catch (Exception e) {
 			System.out.println("Member delete Exception => "+ e.toString());
 			return 0;
 		}
 	}
-	
-	
-	
+
+
+
 
 }

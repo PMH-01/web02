@@ -15,15 +15,15 @@
 	<th>ID</th><th>Password</th><th>Name</th><th>Age</th><th>Jno</th>
 	<th>Info</th><th>Point</th><th>Birthday</th><th>추천인ID</th>
 </tr>
-<c:if test="${not empty requestScope.banana}">
-	<c:forEach var="m" items="${requestScope.banana}">
+<c:if test="${not empty requestScope.mlist}">
+	<c:forEach var="m" items="${requestScope.mlist}">
 		<tr>
 			<td>${m.id}</td><td>${m.password}</td><td>${m.name}</td><td>${s.age}</td><td>${s.jno}</td>
 			<td>${s.info}</td><td>${s.point}</td><td>${s.birthday}</td><td>${s.rid}</td>
 		</tr>
 	</c:forEach>
 </c:if>
-<c:if test="${empty requestScope.banana}">
+<c:if test="${empty requestScope.mlist}">
 	<tr>
 		<td colspan="9">출력할 자료가 없습니다</td>
 	</tr>
