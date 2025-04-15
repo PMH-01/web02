@@ -7,30 +7,30 @@ import model.MemberDAO;
 
 public class MemberService {
 	//** 전역변수 정의
-	MemberDAO mdao = new MemberDAO();
+	MemberDAO dao = new MemberDAO();
 
 	//** selectList
 	public List<MemberDTO> selectList(){
-		return mdao.selectList();
+		return dao.selectList();
 	}
 
 	//** selectOne
 	public MemberDTO selectOne(String id) {
-		return mdao.selectOne(id);
+		return dao.selectOne(id);
 	}
 
 	//** insert
 	public int insert(MemberDTO mdto) {
-		return mdao.insert(mdto);
+		return dao.insert(mdto);
 	}
 
 	//** update
 	public int update(MemberDTO mdto) {
-		return mdao.update(mdto);
+		return dao.update(mdto);
 	}
 
 	//** delete
 	public int delete(String id) {
-		return mdao.delete(id);
+		return dao.delete(id);
 	}
 }

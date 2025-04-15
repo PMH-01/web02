@@ -15,11 +15,12 @@
 	<th>ID</th><th>Password</th><th>Name</th><th>Age</th><th>Jno</th>
 	<th>Info</th><th>Point</th><th>Birthday</th><th>추천인ID</th>
 </tr>
+
 <c:if test="${not empty requestScope.mlist}">
 	<c:forEach var="m" items="${requestScope.mlist}">
 		<tr>
-			<td>${m.id}</td><td>${m.password}</td><td>${m.name}</td><td>${s.age}</td><td>${s.jno}</td>
-			<td>${s.info}</td><td>${s.point}</td><td>${s.birthday}</td><td>${s.rid}</td>
+			<td>${m.id}</td><td>${m.password}</td><td>${m.name}</td><td>${m.age}</td><td>${m.jno}</td>
+			<td>${m.info}</td><td>${m.point}</td><td>${m.birthday}</td><td>${m.rid}</td>
 		</tr>
 	</c:forEach>
 </c:if>

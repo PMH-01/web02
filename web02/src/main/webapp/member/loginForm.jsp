@@ -9,7 +9,8 @@
 </head>
 <body>
 <h2>** MVC2 LoginForm **</h2>
-<form action="/web02/login" method="post">
+<!-- <form action="/web02/login" method="post"> -->
+<form action="/web02/login.do" method="post">
 <table>
 	<tr height="40">
 		<td bgcolor="Khaki"><label for="id">ID</label></td>
@@ -20,7 +21,6 @@
 		<td><input type="password" id="password" name="password"></td>
 	</tr>
 	<tr height="40">
-		<td bgcolor="Khaki"><label for="password">Password</label></td>
 		<td>
 			<input type="submit" value="로그인">&nbsp;&nbsp;
 			<input type="reset" value="취소">

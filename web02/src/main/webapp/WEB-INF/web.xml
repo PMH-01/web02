@@ -1,7 +1,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns="https://jakarta.ee/xml/ns/jakartaee" 
-xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee; https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" 
+xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" 
 id="WebApp_ID" version="6.0">
+<!-- xml 파일에서 cvc-elt.1.a: Cannot find the declaration of element 'beans'. 오류 발생 
+    => 메뉴 Windows -> Preferences 에서 xml(Wild Web Developer) 선택
+                   -> Download external resources like referenced DTD,XSD 를 체크함
+    => xsi:schemaLocation 의 ";" 은 없어야함.
+    => 즉시 적용안되면 프로젝트 clean  
+-->
 <display-name>web02</display-name>
 <welcome-file-list>
 <welcome-file>home.jsp</welcome-file>

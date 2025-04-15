@@ -15,6 +15,9 @@
 <c:if test="${not empty sessionScope.loginID}">
 	${sessionScope.loginName}님 안녕하세요 <br>
 </c:if>
+<c:if test="${not empty sessionScope.message}">
+	${sessionScope.message} <br>
+</c:if>
 
 <hr>
 <img alt="mainImage" src="./images/a2.png" width="420" height="280">
@@ -26,14 +29,17 @@
 </c:if>
 <c:if test="${not empty sessionScope.loginID}">
 &nbsp;<a href="/web02/mdetail">MyInfo</a>&nbsp;
+&nbsp;<a href="/web02/mdetail.do">MyInfo_do</a>&nbsp;
 &nbsp;<a href="/web02/mdetail?jCode=U">내정보수정</a>&nbsp;
 <!-- 내정보 수정 -> 서블릿(selectOne) -> 내정보 출력(수정가능한 form Tag에)
 		 -> 즉, 출력 & 수정가능한 updateForm.jsp -->
 &nbsp;<a href="/web02/logout">Logout</a>&nbsp;
+&nbsp;<a href="/web02/logout.do">Logout_do</a>&nbsp;
 &nbsp;<a href="/web02/mdelete">탈퇴</a>&nbsp;
 </c:if>
 <hr>
 &nbsp;<a href="/web02/mlist">MList</a>&nbsp;
+&nbsp;<a href="/web02/mlist.do">MList_do</a>&nbsp;
 
 </body>
 </html>

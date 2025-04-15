@@ -60,7 +60,6 @@ public class C02_Login extends HttpServlet {
 		
 		
 		
-		//3 결과 (저장 & Forward)
 	
 	
 	}//dopost
